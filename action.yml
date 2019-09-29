@@ -10,4 +10,4 @@ runs:
   image: 'Dockerfile'
 # args: ['${{ inputs.foo }}']
 args:
-  - './examples/'
+  - '--help'
