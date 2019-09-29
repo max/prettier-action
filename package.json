@@ -1,0 +1,7 @@
+{
+  "name": "prettier-action",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Max Schoening <max@max.dev>",
+  "license": "MIT"
+}
