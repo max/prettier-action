@@ -2,3 +2,4 @@ name: 'Prettier'
 description: 'Format source code with Prettier'
 runs:
   using: 'docker'
+  image: 'Dockerfile'
