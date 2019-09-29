@@ -3,4 +3,5 @@ jobs:
   prettier:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@master
       - uses: ./ # Uses an action in the root directory
