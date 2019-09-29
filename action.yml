@@ -4,9 +4,9 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
 inputs:
-  path:
+  foo:
     description: "The file/glob to format"
     required: false
     default: '.'
 args:
-  - ${{ inputs.path }}
+  - ${{ inputs.foo }}
