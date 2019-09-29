@@ -1,12 +1,12 @@
 name: 'Prettier'
 description: 'Format source code with Prettier'
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
 inputs:
   foo:
     description: "The file/glob to format"
     required: false
     default: '.'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
 args:
   - ${{ inputs.foo }}
