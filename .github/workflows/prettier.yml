@@ -5,3 +5,5 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - uses: ./ # Uses an action in the root directory
+        with:
+          path: ./examples

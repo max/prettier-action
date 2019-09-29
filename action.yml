@@ -3,3 +3,10 @@ description: 'Format source code with Prettier'
 runs:
   using: 'docker'
   image: 'Dockerfile'
+inputs:
+  path:
+    description: "The file/glob to format"
+    required: false
+    default: '.'
+  args:
+  - ${{ inputs.path }}
