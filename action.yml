@@ -9,4 +9,4 @@ inputs:
     required: false
     default: '.'
   args:
-  - ${{ inputs.path }}
+  - '${{ inputs.path }}'
