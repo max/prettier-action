@@ -4,9 +4,9 @@ RUN mkdir -p /prettier-action
 WORKDIR /prettier-action
 
 COPY package.json yarn.lock ./
-RUN yarn install --frozen-lockfile
+RUN yarn install
 
 COPY entrypoint.js ./
 COPY src/ ./src
 
-ENTRYPOINT ["./entrypoint.js"]
+ENTRYPOINT ["/prettier-action/entrypoint.js"]
