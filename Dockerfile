@@ -1,7 +1,5 @@
 FROM node:10-alpine
 
-# RUN npm install --global prettier && npm cache --force clean
-
 RUN mkdir -p /prettier-action
 WORKDIR /prettier-action
 
