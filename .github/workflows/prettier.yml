@@ -5,5 +5,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - uses: ./ # Uses an action in the root directory
-        with:
-          path: ./examples/**/*.{js,md}
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        # with:
+        #   path: ./examples/**/*.{js,md}
