@@ -2,11 +2,18 @@ const github = require("@actions/github");
 
 const run = async () => {
   console.log("->> Starting Prettier...");
-  const files = await github.pulls.listFiles({
-    owner: github.context.repo.owner,
-    repo: github.context.repo.repo,
-    pull_number: 1
-  });
+
+  let files;
+  try {
+    files = await github.pulls.listFiles({
+      owner: github.context.repo.owner,
+      repo: github.context.repo.repo,
+      pull_number: 1
+    });
+  } catch (err) {
+    console.log(error);
+    process.exit(1);
+  }
 
   console.log(files);
 };
