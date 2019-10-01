@@ -11,7 +11,7 @@ const run = async () => {
       pull_number: 1
     });
   } catch (err) {
-    console.log(error);
+    console.log(err);
     process.exit(1);
   }
 
