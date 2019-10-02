@@ -4,6 +4,8 @@ const github = require("@actions/github");
 const run = async () => {
   const client = new github.GitHub(process.env.GITHUB_TOKEN);
 
+  console.log(github.context);
+
   let files;
   try {
     files = await getChangedFiles(client, github.context);
