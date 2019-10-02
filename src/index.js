@@ -1,17 +1,14 @@
 const github = require("@actions/github");
 
 const run = async () => {
-  const octokit = new github.GitHub(process.env.GITHUB_TOKEN);
+  const client = new github.GitHub(process.env.GITHUB_TOKEN);
 
   let pr;
   try {
-    pr = await octokit.pulls.get({
+    pr = await client.pulls.listFiles({
       owner: github.context.repo.owner,
       repo: github.context.repo.repo,
-      pull_number: 1,
-      mediaType: {
-        format: "diff"
-      }
+      pull_number: 1
     });
   } catch (err) {
     console.log(err);
