@@ -8,6 +8,7 @@ const run = async () => {
     pr = await octokit.pulls.get({
       owner: github.context.repo.owner,
       repo: github.context.repo.repo,
+      pull_number: 1,
       mediaType: {
         format: "diff"
       }
