@@ -16,7 +16,7 @@ const run = async () => {
     process.exit(1);
   }
 
-  files.map(({ filename }) => console.log);
+  files.map(({ filename }) => console.log(filename));
 };
 
 module.exports = run;
