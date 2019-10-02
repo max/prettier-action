@@ -9,7 +9,7 @@ const run = async () => {
     files = await client.pulls.listFiles({
       owner: github.context.repo.owner,
       repo: github.context.repo.repo,
-      pull_number: github.context.pull_request.number
+      pull_number: github.context.issue.number
     });
   } catch (err) {
     console.log(err);
