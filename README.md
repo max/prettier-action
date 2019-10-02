@@ -4,7 +4,8 @@ Prettier Action will automatically format your code with Prettier and either com
 
 ## Todo
 
-- List files that have changed in PR.
-  - Abort if not in PR context. Abort if no files changed.
-- Format file types based on input and configuration.
-- Commit files.
+- [x] Check if running inside of a PR and bail if not.
+- [ ] List files that have changed in PR.
+  - [ ] Abort if not in PR context. Abort if no files changed.
+- [ ] Format file types based on input and configuration.
+- [ ] Commit files.
