@@ -1,21 +1,23 @@
 const github = require("@actions/github");
 
 const run = async () => {
-  console.log("->> Starting Prettier...");
+  const octokit = new github.GitHub(process.env.GITHUB_TOKEN);
 
-  let files;
+  let pr;
   try {
-    files = await github.pulls.listFiles({
+    pr = await octokit.pulls.get({
       owner: github.context.repo.owner,
       repo: github.context.repo.repo,
-      pull_number: 1
+      mediaType: {
+        format: "diff"
+      }
     });
   } catch (err) {
     console.log(err);
     process.exit(1);
   }
 
-  console.log(files);
+  console.log(pr);
 };
 
 module.exports = run;
