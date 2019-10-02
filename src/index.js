@@ -1,4 +1,4 @@
-const core = require("@actions/core");
+// const core = require("@actions/core");
 const github = require("@actions/github");
 
 const run = async () => {
@@ -7,9 +7,9 @@ const run = async () => {
   let files;
   try {
     files = await client.pulls.listFiles({
-      owner: context.repo.owner,
-      repo: context.repo.repo,
-      pull_number: context.pull_request.number
+      owner: github.context.repo.owner,
+      repo: github.context.repo.repo,
+      pull_number: github.context.pull_request.number
     });
   } catch (err) {
     console.log(err);
