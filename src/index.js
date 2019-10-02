@@ -21,7 +21,7 @@ async function getChangedFiles(client, context) {
   const { data: files } = await client.pulls.listFiles({
     owner: context.repo.owner,
     repo: context.repo.repo,
-    pull_number: 1
+    pull_number: context.pull_request.number
   });
 
   return files;
