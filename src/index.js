@@ -1,21 +1,28 @@
+const core = require("@actions/core");
 const github = require("@actions/github");
 
 const run = async () => {
   const client = new github.GitHub(process.env.GITHUB_TOKEN);
 
-  let pr;
+  let files;
   try {
-    pr = await client.pulls.listFiles({
-      owner: github.context.repo.owner,
-      repo: github.context.repo.repo,
-      pull_number: 1
-    });
+    files = await getChangedFiles(client, github.context);
   } catch (err) {
     console.log(err);
     process.exit(1);
   }
 
-  console.log(pr);
+  console.log(files);
 };
+
+async function getChangedFiles(client, context) {
+  const { data: files } = await client.pulls.listFiles({
+    owner: context.repo.owner,
+    repo: context.repo.repo,
+    pull_number: 1
+  });
+
+  return files;
+}
 
 module.exports = run;
